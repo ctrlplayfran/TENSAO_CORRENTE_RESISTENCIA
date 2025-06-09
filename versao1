@@ -1,0 +1,18 @@
+# Tensão da fonte e especificações do LED - V=r*i
+tensao_fonte = 9  # Volts
+tensao_led = 3    # Volts
+corrente_led = 0.02  # Corrente em Ampere (20mA)
+
+# Calculando o valor do resistor
+tensao_resistor = tensao_fonte - tensao_led
+resistencia_necessaria = tensao_resistor / corrente_led
+
+# Verificando a resistência necessária com if/elif/else
+if resistencia_necessaria < 100:
+    print(f"A resistência necessária é de {resistencia_necessaria:.2f} Ohms. Um resistor de 100 Ohms seria adequado.")
+elif 100 <= resistencia_necessaria < 150:
+    print(f"A resistência necessária é de {resistencia_necessaria:.2f} Ohms. Um resistor de 120 Ohms seria adequado.")
+elif 150 <= resistencia_necessaria < 200:
+    print(f"A resistência necessária é de {resistencia_necessaria:.2f} Ohms. Um resistor de 150 Ohms seria adequado.")
+else:
+    print(f"A resistência necessária é de {resistencia_necessaria:.2f} Ohms. Um resistor de 200 Ohms ou mais seria adequado.")
